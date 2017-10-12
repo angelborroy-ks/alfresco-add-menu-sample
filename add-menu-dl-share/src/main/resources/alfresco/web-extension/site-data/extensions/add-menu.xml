@@ -1,0 +1,15 @@
+<extension>
+	<modules>
+		<module>
+			<id>Custom button</id>
+			<customizations>
+				<customization>
+					<targetPackageRoot>org.alfresco.components.documentlibrary
+					</targetPackageRoot>
+					<sourcePackageRoot>es.keensoft.custom-button</sourcePackageRoot>
+				</customization>
+			</customizations>
+			<auto-deploy>true</auto-deploy>
+		</module>
+	</modules>
+</extension>
