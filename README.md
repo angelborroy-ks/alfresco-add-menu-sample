@@ -139,6 +139,18 @@ for (var i=0; i<model.widgets.length; i++)
 
 Una vez realizados estos pasos, el botón "Botón" aparecerá en la barra de la lista de documentos y obtendrá un *alert* con un *NodeRef* cuando se pulse. 
  
+
+## Otras barras de tareas
+
+Existen componentes específicos de barra de tareas para otras páginas de Alfresco. En el proyecto se han creado también las extensiones para cada uno de ellos a modo de ejemplo:
+
+* Mis Ficheros: myfiles.get.html.ftl, myfiles.get.js, custom-button-myfiles.js
+
+* Ficheros compartidos:sharedfiles.get.html.ftl, sharedfiles.get.js, custom-button-sharedfiles.js
+
+* Repositorio: repo.get.html.ftl, repo.get.js, custom-button-repo.js
+
+
 ## Disclaimer
 
 Existen otras maneras maneras de realizar esta extensión (como https://github.com/keensoft/alfresco-site-node-templates/blob/master/site-node-template-share/src/main/resources/META-INF/resources/site-node-template-share/js/site-node-template-share.js), pero el ejemplo anterior ilustra el comportamiento de cada uno de los elementos que construyen las páginas en Share. 

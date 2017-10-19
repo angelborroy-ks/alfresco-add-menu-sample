@@ -12,22 +12,22 @@ var custom;
 	custom.button = custom.button || {};
 
 	// Declare custom toolbar
-	custom.button.DocListToolbar = function CustomDocListToolbar_constructor(
+	custom.button.RepositoryDocListToolbar = function CustomDocListToolbar_constructor(
 			htmlId) {
-		custom.button.DocListToolbar.superclass.constructor.call(this, htmlId);
+		custom.button.RepositoryDocListToolbar.superclass.constructor.call(this, htmlId);
 		return this;
 	};
 
 	// Extend Alfresco DocListToolbar
-	YAHOO.extend(custom.button.DocListToolbar, Alfresco.DocListToolbar);
-	YAHOO.lang.augmentProto(custom.button.DocListToolbar,
+	YAHOO.extend(custom.button.RepositoryDocListToolbar, Alfresco.RepositoryDocListToolbar);
+	YAHOO.lang.augmentProto(custom.button.RepositoryDocListToolbar,
 			Alfresco.doclib.Actions);
 
 	// Extend default DocListToolbar...
-	YAHOO.extend(custom.button.DocListToolbar, Alfresco.DocListToolbar, {
+	YAHOO.extend(custom.button.RepositoryDocListToolbar, Alfresco.RepositoryDocListToolbar, {
 
 		onReady : function DLTB_onReady() {
-			custom.button.DocListToolbar.superclass.onReady.call(this);
+			custom.button.RepositoryDocListToolbar.superclass.onReady.call(this);
 			// Link button to YUI and attach function "onClick"
 			this.widgets.customButton = Alfresco.util.createYUIButton(this,
 					"createCustomButton-button", this.onClickCustomButton, {
@@ -41,7 +41,7 @@ var custom;
 			var destination = this.doclistMetadata.parent.nodeRef;
 
 			// Write your own code
-			alert("Document library: " + destination);
+			alert("Repository: " + destination);
 		}
 
 	});
