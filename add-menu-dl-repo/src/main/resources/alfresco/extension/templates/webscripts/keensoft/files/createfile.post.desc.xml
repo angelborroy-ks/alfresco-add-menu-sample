@@ -1,0 +1,7 @@
+<webscript>
+	<shortname>Create file Sample Web Script</shortname>
+	<description>Create sample file at destination</description>
+	<url>/files/create</url>
+	<authentication>user</authentication>
+	<format default="json"></format>
+</webscript>

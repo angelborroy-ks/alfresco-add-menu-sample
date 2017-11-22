@@ -38,10 +38,49 @@ var custom;
 		},
 
 		onClickCustomButton : function DLTB_onClickCustomButton(e, p_obj) {
-			var destination = this.doclistMetadata.parent.nodeRef;
+			
+			 var destination = this.doclistMetadata.parent.nodeRef;
 
-			// Write your own code
-			alert("Shared files: " + destination);
+			 // Write your own code
+			 alert("Shared files: " + destination);
+			
+	         
+	         // Invoke async repo Web Script by using HTTP POST and JSON
+			 Alfresco.util.Ajax.request(
+	         {
+	            method: Alfresco.util.Ajax.POST,
+	            url:  Alfresco.constants.PROXY_URI + "/files/create",
+	            dataObj:
+	            {
+	               destination: destination
+	            },
+	            requestContentType: Alfresco.util.Ajax.JSON,
+	            successCallback:
+	            {
+                   fn: function onRequestSuccess(response)
+                   {
+                	       var json = Alfresco.util.parseJSON(response.serverResponse.responseText);
+                	       Alfresco.util.PopupManager.displayMessage(
+                       {
+                           text: "File created: " + json.doc.name + " (" + json.doc.nodeRef + ")"
+                       })
+                   },
+                   scope: this	            	
+	            	},
+	            failureCallback:
+	            {
+	               fn: function onRequestFailure()
+                   {
+                       Alfresco.util.PopupManager.displayMessage(
+                       {
+                           text: "File has not been created!"
+                       })
+                    },
+                    scope: this	            	
+	            }
+	         });
+			
+			
 		}
 
 	});
